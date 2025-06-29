@@ -1,10 +1,18 @@
 _GDD -Generation Driven Development_
-
-> Теперь ты не программист, а архитектор
+## Ключевые идеи
+- Теперь ты не программист, а архитектор! Фокус на более масштабных вещах и бизнесе, а не на коде от твоих рук.
+- Когнитивная нагрузка должна быть минимальной! Минимальной с учетом масштаба системы. Еще более строгими становятся требования по Coupling, Cohesion, выделению и контролю утечек абстракций, чистоте функций, их размеру, размеру файлов и так далее.
+- Чем более распространенная технология или подход – тем лучше.
+- Чем более надежный подход тем лучше.
+- Как можно больше качественной документации в кодовой базе. Различные README и Docstring лучшие друзья GDD.
+- Рекомендуется использовать DDD, layered architecture.
+- Тесты обязательны.
+- Линтеры обязательны.
 ## Нужно попробовать
 * [ ] Еще больше модульности
 * [ ] Больше писать заново вместо исправлений
 * [ ] Меньше юнит тестов, больше e2e и интеграционных
+* [ ] DoD (definition of done), по сути, UI/UX тесты для каждого инкремента
 
 ## Наблюдения
 * Архитекторский подход реально работает для восприятия
@@ -17,12 +25,44 @@ _GDD -Generation Driven Development_
 	* От части это от того, что для надежности нужны тесты, а тесты тоже тянут архитектуру в нужном направлении
 * Не всегда ясно чего хочешь и в таких моментах просто сам пишешь
 
-## Вайбкодинг и модульность
+## GDD и модульность
 * **Нужна максимальная изоляция** - чтобы понизить стоимость на переписывание
 * **Стоит очень нежно относится к контрактам** - чтобы не завязаться на вайбкод и не потерять все плюсы низкой цены на реинжениринг
 * **Тесты-тесты-тесты** - чтобы реально фиксировать состояние и реально можно было много переписывать каждый раз
 * Можно идти в MCP-style микросервисы, но пока есть возможность, лучше все равно оставить модульный монолит
-## Вайбификация проекта
+## Cognitive-enrichment
+
+Before process add these files:
+* `.cursorules`
+* `AGENT.md`
+
+Rules:
+* File less then 400 lines
+* Do from deepest to shallowest (from ./.../.../....../module/file to ./)
+* For services and apps `README.md`, for modules `DESCRIPTION.md`
+
+For docstrings:
+```md
+Add docstrings for this code for explanations, use Google Python Style Guide for it
+```
+
+For readme and descriptions:
+```
+@CURRENT_TASK.md. Give me readme for module
+```
+
+```md
+I have module and need documentation for it. It must contain description and some abstract logic that is out of docstring context.
+Also skip deploy and test part, it will be in another file.
+
+Additional info:
+* Use AGENT.md in root dir for rules and info
+* Use READ.md files to understand project
+
+Context:
+This is module for helpdesk integration
+```
+
 * Опционально можно сначала добавить агентные файлы (например для курсора)
 * Все рекурсивно (от комментов к полному README.md)
 * Документы должны соответствовать уровню, информация не должна протекать снизу вверх абстракции
