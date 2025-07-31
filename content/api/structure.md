@@ -428,6 +428,11 @@ _Agents Context Protocol_
 **ACP** defines a structured standard for agent-to-agent and agent-to-app communication in agentic systems. It is designed to formalize how agents describe interactions, encapsulate responses, and handle both synchronous and asynchronous workflows.
 
 >  **Note**: ACP is not a transport protocol. It standardizes payload structures and response semantics, and can be transported over REST, AsyncAPI, or other stateless formats.
+### Key ideas
+* One unified model for all cases.
+* Instructions for use are in the hands of the developer, not the model. (Unlike flexible agent-based protocols where this information is passed through separate methods, leaving everything to the will of the llm, which leads to less control over the process and increased probability of errors). But in future versions there is probability that description info will be added to the protocol to have no-code integrations.
+* Inherits current approaches rather than rejecting them. (Uses best practices like REST, and events API).
+* Leaves the choice of transport free.
 ### Key Principles
 - **Modular & Embeddable**: ACP can be implemented as a module function for LLM within your system codebase, not necessarily a standalone service.
 - **Standard Documentation**: ACP-based services **must be documented** using TypeSpec, OpenAPI, or AsyncAPI with description that will be given to LLM.

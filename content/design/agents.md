@@ -6,7 +6,16 @@ These principles define a comprehensive approach to designing modular, reasoning
 > - Stateless, schema-driven communication
 > - Recursive, modular function architecture
 > - Clear separation of responsibilities
->
+
+### Key concepts
+* No life without observability.
+	* Phoenix
+	* Grafana
+	* Langfuse
+* No life without quality control.
+	* DoD tests for increment.
+	* Benchmarks for ML.
+	* Modules for scripts.
 ### Function
 
 Functions in AI systems vary in complexity and cognitive depth. Use clear classifications to guide their architecture:

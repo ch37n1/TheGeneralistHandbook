@@ -1,5 +1,11 @@
 # Software Development Best Practices
 
+## Unsorted
+* Small functions.
+* Small amount of functions input params. 
+* Small amount of nesting.
+* Return fast (right after if and not at the end). Last return only for success cases.
+* Use style guides (PEP for Python, Uber Go Style Guide for Go or [Google Guides](https://google.github.io/styleguide/pyguide.html)).
 ## Functional Objects Paradigm
 
 ### Functions
