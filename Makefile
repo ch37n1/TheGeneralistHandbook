@@ -1,5 +1,8 @@
 r:
-	npx quartz build --serve
+	bun run quartz build --serve
 
 p:
-	npx quartz sync
+	bun run quartz sync
+
+init:
+	bun install

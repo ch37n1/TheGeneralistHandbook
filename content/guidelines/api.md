@@ -1,0 +1,1 @@
+- For REST: https://github.com/microsoft/api-guidelines
